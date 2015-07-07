@@ -7,27 +7,28 @@
   <link rel="stylesheet" href="../../public/style.css">
 </head>
 <body>
-  <h1>MOTIV8</h1>
-  <div class="events">
-  <form action="/events">
-    <input type="submit" value="Events">
-  </form>
-  <form action="/events/{{_id}}/edit">
-    <input type="submit" value="Edit">
-  </form>
-    <a href='/events/{{_id}}/'><h1>{{name}}, {{date}}</a></h1>
-  </form>
-  <div class="col">
-    <form action="/counter" method='POST'>
-      <button class="motivate" name='isMotivated' value='true'><i class="fa fa-check"></i></button>
-    </form></div>
-  <div class="col">
-    <form action="/counter" method='POST'>
-      <button name='notMotivated' value='false'><i class="fa fa-times"></i></button>
+  <main>
+    <h1>MOTIV8</h1>
+    <a href="/home" class="button"><i class="fa fa-home"></i> Home</a>
+    <a href="/events" class="button"><i class="fa fa-list-ul"></i> Events</a>
+    <a href="/events/{{_id}}/edit" class="button"><i class="fa fa-pencil"></i> Edit</a>
+
+      <a href='/events/{{_id}}/'><h1>{{name}}, {{date}}</a></h1>
     </form>
+    <div class="col">
+      <form action="/counter" method='POST'>
+        <button class="motivate" name='isMotivated' value='true'><i class="fa fa-check"></i></button>
+      </form></div>
+    <div class="col">
+      <form action="/counter" method='POST'>
+        <button name='notMotivated' value='false'><i class="fa fa-times"></i></button>
+      </form>
+    </div>
+    <a href="/data" class="button"><i class="fa fa-line-chart"></i> View my data</a>
   </div>
-  <a href="/data" class="button"><i class="fa fa-line-chart"></i> View my data</a>
-</div>
-<form action="/events/{{_id}}/delete" method="post"><input type="submit" value="Delete Event">
+
+  <a href="/events/{{_id}}/delete" class="button"><i class="fa fa-trash-o"></i> Delete</a>
+  </main>
+
 </body>
 </html>

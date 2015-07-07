@@ -27,11 +27,28 @@ h1 {
   margin-bottom: 0;
 }
 
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999898;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
 p {
   font-size: 20px;
   color: #989898;
   padding: 20px 80px;
   margin: 0 0 30px;
+}
+
+a {
+  font-size: 30px;
+  text-decoration: none;
+  margin-right: 10px;
+  color: rgb(0, 151, 191);
 }
 
 button {
@@ -97,5 +114,11 @@ input {
 }
 .events {
   display:inline;
-  }
+}
+.x {
+  background: none;
+  color: black;
+  border: none;
+  padding: 0;
+  display: inline;
 }

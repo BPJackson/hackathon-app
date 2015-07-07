@@ -21,7 +21,7 @@ events.find({}, function(err, docs) {
 
   var mailOptions = {
       from: 'Shannon :heavy_check_mark: <shanforsman@gmail.com>', // sender address
-      to: 'sforsman1@gmail.com', // list of receivers
+      to: 'brianpjackson88@gmail.com', // list of receivers
       subject: 'Hello :heavy_check_mark:', // Subject line
       text: 'Hello world :heavy_check_mark:', // plaintext body
       html: template // html body

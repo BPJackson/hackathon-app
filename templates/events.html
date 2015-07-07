@@ -7,18 +7,16 @@
   <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
+  <main>
   <h1>MOTIV8</h1>
-  <form action="/home">
-    <input type="submit" value="Home">
-  </form>
-  <form action="/events"><input type="submit" value="Events"></form>
-  <form action="/events/new">
-    <input type="submit" value="New">
-  </form>
-  <br>
-  <br>
+  <a href="/home" class="button"><i class="fa fa-home"></i> Home</a>
+  <a href="/events" class="button"><i class="fa fa-list-ul"></i> Events</a>
+  <a href="/events/new" class="button"><i class="fa fa-plus"></i> New</a>
+
+<br>
 {{#events}}
-    <a href='/events/{{_id}}/'><h1>{{name}}</a><form action="/events/{{_id}}/delete" method="post"><input type="submit" value="X"></h1>
+    <span><a href='/events/{{_id}}/'>{{name}}</a><form class='events' action="/events/{{_id}}/delete" method="post"><input class='x' type="submit" value="X"></span><br>
   {{/events}}
-  
+</main>
+</body>
 </html>

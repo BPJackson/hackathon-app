@@ -7,14 +7,10 @@
   <link rel="stylesheet" href="../../public/style.css">
 </head>
 <body>
+  <main>
   <h1>MOTIV8</h1>
-  <form action="/home">
-    <input type="submit" value="Home">
-  </form>
-  <form action="/events">
-    <input type="submit" value="Events">
-  </form>
-
+  <a href="/home" class="button"><i class="fa fa-home"></i> Home</a>
+  <a href="/events" class="button"><i class="fa fa-list-ul"></i> Events</a>
   <br>
   <br>
   <a href='/events/{{_id}}/'><h2>{{name}}</h2></a>
@@ -23,5 +19,6 @@
   <input id="date" type="date" name="date"></input>
   <input type="submit" value="Submit"></input>
 </form>
+</main>
 </body>
 </html>
