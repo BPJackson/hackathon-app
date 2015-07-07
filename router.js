@@ -17,12 +17,43 @@ routes.addRoute('/home', (req, res, url) => {
     })
 routes.addRoute('/counter', (req, res, url) => {
   res.setHeader('Content-Type', 'text/html')
-  if (req.method === 'GET') {
-      if (err) res.end('404')
-        var file = fs.readFileSync('templates/data.html')
-        res.end(file)
-      }
-    })
+    if (req.method === 'POST') {
+      if (req.value)
+
+      if (req.method === 'POST') {
+          var data = ''
+          req.on('data', function (chunk) {
+            data += chunk
+          })
+          req.on('end', function () {
+            var counter = qs.parse(data)
+            if (counter.value === clicked) counter.value = true
+            var insertMotivate = bands.insert(band)
+            insertBand.on('success', function() {
+              res.writeHead(302, {'Location': '/bands'})
+              res.end()
+            })
+          })
+        }
+      })
+    
+      var obj = motivate.findOne({isMotivated})
+      obj.isMotivated += 1
+      motivate.update({_id: url.params.id}, {$set: obj}, function (err, doc) {
+        if (err) res.end('404')
+        res.writeHead(302, {'Location': '/data'})
+        res.end()
+      })
+      if (req.method === 'POST') {
+        var obj = motivate.findOne({notMotivated})
+        obj.isMotivated += 1
+        motivate.update({_id: url.params.id}, {$set: obj}, function (err, doc) {
+          if (err) res.end('404')
+          res.writeHead(302, {'Location': '/data'})
+          res.end()
+        })
+
+
 routes.addRoute('/data', (req, res, url) => {
   res.setHeader('Content-Type', 'text/html')
   if (req.method === 'GET') {
