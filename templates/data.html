@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motivate App</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../public/style.css">
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+{{#counter}}
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Motivation Levels'],
+          ['Motivated!',     {{isMotivated}}],
+          ['Not Motivated',     {{notMotivated}}]
+        ]);
+{{/counter}}
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var options = {
+          width: 600,
+          height: 440,
+          backgroundColor: 'aliceblue',
+          colors: ['#00c2a5', '#C23900']
+        };
+
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+<header>
+  <h1>Motiv8 Data</h1>
+</header>
+<main>
+<div id="piechart"></div>
+</main>
+
+</body>
+</html>

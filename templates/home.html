@@ -11,15 +11,17 @@
   <h1>Motiv8</h1>
 </header>
 <main>
+  <p>{{name}}</p>
   <div class="col">
     <form action="/counter" method='POST'>
-      <button name='isMotivated' value='true'><i class="fa fa-check"></i></button>
+      <button class="motivate" name='isMotivated' value='true'><i class="fa fa-check"></i></button>
     </form></div>
   <div class="col">
     <form action="/counter" method='POST'>
       <button name='notMotivated' value='false'><i class="fa fa-times"></i></button>
     </form>
   </div>
+  <a href="/data" class="button"><i class="fa fa-line-chart"></i> View my data</a>
 </main>
 
 </body>
