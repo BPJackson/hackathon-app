@@ -31,7 +31,10 @@ routes.addRoute('/counter', (req, res, url) => {
                   if (err) res.end('404')
                   res.writeHead(302, {'Location': '/data'})
                   res.end()
-})}})})
+})
+}})
+}
+})
             //var insertMotivate = bands.insert(band)
             //insertBand.on('success', function() {
               //res.writeHead(302, {'Location': '/bands'})
