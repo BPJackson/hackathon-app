@@ -3,7 +3,7 @@ var routes = require('routes')(),
     db = require('monk')('localhost/motivate'),
     bands = db.get('bands'),
     qs = require('qs'),
-    // view = require('./view'),
+    view = require('./view'),
     mime = require('mime')
 
 // install fs monk qs mustache mime
@@ -32,6 +32,31 @@ routes.addRoute('/home', (req, res, url) => {
 //                   if (err) res.end('404')
 //                   res.writeHead(302, {'Location': '/data'})
 //                   res.end()
+// })}})})
+//             //var insertMotivate = bands.insert(band)
+//             //insertBand.on('success', function() {
+//               //res.writeHead(302, {'Location': '/bands'})
+//               //res.end()
+//             //})
+//           //})
+//         //}
+//       //})
+//   var obj = motivate.findOne({isMotivated})
+//     obj.isMotivated += 1
+//     motivate.update({_id: url.params.id}, {$set: obj}, function (err, doc) {
+//       if (err) res.end('404')
+//       res.writeHead(302, {'Location': '/data'})
+//       res.end()
+//     })
+//     if (req.method === 'POST') {
+//       var obj = motivate.findOne({notMotivated})
+//       obj.isMotivated += 1
+//       motivate.update({_id: url.params.id}, {$set: obj}, function (err, doc) {
+//         if (err) res.end('404')
+//         res.writeHead(302, {'Location': '/data'})
+//         res.end()
+//       })
+
 //                 })
 //               }})
 //             }
@@ -57,6 +82,8 @@ routes.addRoute('/home', (req, res, url) => {
 //       })
 //     })
 //   }
+// })
+
 routes.addRoute('/public/*', (req, res, url) => {
   res.setHeader('Content-Type', mime.lookup(req.url))
   fs.readFile('./' + req.url, function (err, file) {
@@ -67,4 +94,5 @@ routes.addRoute('/public/*', (req, res, url) => {
      res.end(file)
   })
 })
+
 module.exports = routes
