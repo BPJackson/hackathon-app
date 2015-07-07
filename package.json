@@ -4,7 +4,8 @@
   "description": "",
   "main": "router.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --harmony app.js"
   },
   "repository": {
     "type": "git",
@@ -15,11 +16,13 @@
   "bugs": {
     "url": "https://github.com/BPJackson/hackathon-app/issues"
   },
+  "devDependencies": {},
   "homepage": "https://github.com/BPJackson/hackathon-app",
   "dependencies": {
     "fs": "0.0.2",
     "mime": "^1.3.4",
     "monk": "^1.0.1",
-    "qs": "^4.0.0"
+    "qs": "^4.0.0",
+    "url": "^0.10.3"
   }
 }
