@@ -15,5 +15,5 @@ var server = http.createServer(function (req, res) {
 
 server.listen(9000, function (err) {
   if (err) console.log('Doah', err)
-  console.log('Woot. A server is running on port 8080')
+  console.log('Woot. A server is running on port 9000')
 })
