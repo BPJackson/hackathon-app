@@ -10,8 +10,9 @@ var routes = require('routes')(),
 routes.addRoute('/home', (req, res, url) => {
   res.setHeader('Content-Type', 'text/html')
   if (req.method === 'GET') {
-      if (err) res.end('404')
-        var file = fs.readFileSync('templates/home.html')
+        var file = fs.readFile('templates/home.html' function(err, file) {
+          if (err) res.end('404')
+        })
         res.end(file)
       }
     })
@@ -56,14 +57,14 @@ routes.addRoute('/home', (req, res, url) => {
 //       })
 //     })
 //   }
-// routes.addRoute('/public/*', (req, res, url) => {
-//   res.setHeader('Content-Type', mime.lookup(req.url))
-//   fs.readFile('./' + req.url, function (err, file) {
-//    if (err) {
-//      res.setHeader('Content-Type', 'text/html')
-//      res.end('404')
-//      }
-//      res.end(file)
-//   })
-// })
+routes.addRoute('/public/*', (req, res, url) => {
+  res.setHeader('Content-Type', mime.lookup(req.url))
+  fs.readFile('./' + req.url, function (err, file) {
+   if (err) {
+     res.setHeader('Content-Type', 'text/html')
+     res.end('404')
+     }
+     res.end(file)
+  })
+})
 module.exports = routes
