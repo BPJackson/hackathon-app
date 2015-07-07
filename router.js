@@ -10,10 +10,10 @@ var routes = require('routes')(),
 routes.addRoute('/home', (req, res, url) => {
   res.setHeader('Content-Type', 'text/html')
   if (req.method === 'GET') {
-        var file = fs.readFile('templates/home.html', function(err, file) {
+        var file = fs.readFile('templates/home.html' function(err, file) {
           if (err) res.end('404')
-          res.end(file)
         })
+        res.end(file)
       }
     })
 // routes.addRoute('/counter', (req, res, url) => {
@@ -57,6 +57,10 @@ routes.addRoute('/home', (req, res, url) => {
 //         res.end()
 //       })
 
+//                 })
+//               }})
+//             }
+//           })
 // routes.addRoute('/data', (req, res, url) => {
 //   res.setHeader('Content-Type', 'text/html')
 //   if (req.method === 'GET') {
@@ -79,6 +83,7 @@ routes.addRoute('/home', (req, res, url) => {
 //     })
 //   }
 // })
+
 routes.addRoute('/public/*', (req, res, url) => {
   res.setHeader('Content-Type', mime.lookup(req.url))
   fs.readFile('./' + req.url, function (err, file) {
